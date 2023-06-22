@@ -9,6 +9,14 @@
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
+    const isModalHidden = refs.modal.classList.contains('is-hidden');
+
+    if (isModalHidden) {
+      refs.modal.classList.remove('is-hidden');
+      document.body.style.overflow = 'hidden';
+    } else {
+      refs.modal.classList.add('is-hidden');
+      document.body.style.overflow = '';
+    }
   }
 })();
